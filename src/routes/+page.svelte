@@ -1,29 +1,48 @@
 <script>
-  import Header from '../components/ui/Header.svelte'
+  import { onMount } from 'svelte';
+  import Header from '../components/ui/Header.svelte';
+  import Hero from '../components/ui/Hero.svelte';
+  import Services from '../components/ui/Services.svelte';
+  import Process from '../components/ui/Process.svelte';
+  import About from '../components/ui/About.svelte';
+  import Carousel from '../components/ui/Carousel.svelte';
+  import CaseStudies from '../components/ui/CaseStudies.svelte';
+  import Contact from '../components/ui/Contact.svelte';
+  import Footer from '../components/ui/Footer.svelte';
+  import Banner from '../components/ui/Banner.svelte';
+
+  let darkMode = false;
+
+  function toggleDarkMode() {
+    darkMode = !darkMode;
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
+
+  onMount(() => {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      darkMode = true;
+      document.documentElement.classList.add('dark');
+    }
+  });
 </script>
 
-<Header />
-
-<div class="bg-white dark:bg-gray-800 sm:px-6 lg:px-8">
-  <h1
-    class="pt-20 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
-  >
-    Nossos serviços
-  </h1>
-  <p
-    class="pt-5 text-lg text-justify font-normal text-black lg:text-xl sm:px-16 xl:px-48 dark:text-white"
-  >
-    Prestamos serviços de assessoria, consultoria e agenciamento para as
-    operações de importação e exportação, incluindo órgãos anuentes e licenças
-    especificas, além de estudos de mercado para empresas que pretendem expandir
-    seus negócios para o mercado internacional (compra ou venda).
-  </p>
-  <p
-    class="pt-5 pb-20 text-lg text-justify font-normal text-black lg:text-xl sm:px-16 xl:px-48 dark:text-white"
-  >
-    Garantimos toda a conformidade aduaneira com os órgãos competentes, bem como
-    todo o controle operacional “door to door”, considerando a negociação do
-    frete internacional (aéreo, marítimo e rodoviário), até o desembaraço e
-    entrega da remessa ao destinatário final.
-  </p>
+<div class={darkMode ? 'dark' : ''}>
+  <div class="bg-white dark:bg-gray-900 min-h-screen text-gray-800 dark:text-gray-200 font-inter">
+    <Header />
+    <main>
+      <Banner />
+      <Hero />
+      <About />
+      <Services />
+      <Process />
+      <Carousel />
+      <CaseStudies />
+      <Contact />
+    </main>
+    <Footer />
+  </div>
 </div>

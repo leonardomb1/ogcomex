@@ -1,7 +1,7 @@
-import IconFacebook from "./icons/IconFacebook.svelte"
-import IconInstagram from "./icons/IconInstagram.svelte"
-import IconWhatsApp from "./icons/IconWhatsApp.svelte"
-import IconTwitter from "./icons/IconTwitter.svelte"
+import IconFacebook from "../components/icons/IconFacebook.svelte"
+import IconInstagram from "../components/icons/IconInstagram.svelte"
+import IconWhatsApp from "../components/icons/IconWhatsApp.svelte"
+import IconTwitter from "../components/icons/IconTwitter.svelte"
 
 export const socials = [
     {
