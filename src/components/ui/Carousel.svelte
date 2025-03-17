@@ -2,7 +2,7 @@
     import { onMount } from 'svelte';
     import { testimonials } from '$lib/ui/testimonials';
     
-    let currentIndex = 0;
+    let currentIndex = $state(0);
     let intervalId;
     
     function nextTestimonial() {
@@ -39,8 +39,8 @@
       </div>
       
       <div class="mt-16 max-w-4xl mx-auto relative"
-      on:mouseenter={stopAutoplay}
-      on:mouseleave={startAutoplay}
+      onmouseenter={stopAutoplay}
+      onmouseleave={startAutoplay}
       role="region"
       aria-label="Testimonials carousel"
       >
@@ -65,7 +65,7 @@
       
       <button 
           class="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-4 bg-white dark:bg-gray-900 rounded-full p-2 shadow-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none"
-          on:click={prevTestimonial}
+          onclick={prevTestimonial}
           aria-label="Previous testimonial"
       >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,7 +75,7 @@
       
       <button 
           class="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-4 bg-white dark:bg-gray-900 rounded-full p-2 shadow-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none"
-          on:click={nextTestimonial}
+          onclick={nextTestimonial}
           aria-label="Next testimonial"
       >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,7 +87,7 @@
           {#each testimonials as _, i}
           <button 
               class={`w-3 h-3 rounded-full ${i === currentIndex ? 'bg-gray-900 dark:bg-white' : 'bg-gray-300 dark:bg-gray-600'}`}
-              on:click={() => currentIndex = i}
+              onclick={() => currentIndex = i}
               aria-label={`Go to testimonial ${i + 1}`}
           ></button>
           {/each}

@@ -1,31 +1,39 @@
 <script>
   import { content } from "$lib/ui/header";
-
-  export let darkMode = false;
-  export let toggleDarkMode;
-
-  let isMenuOpen = false;
-  let isServicesDropdownOpen = false;
-  let scrolled = false;
-
+  import { onMount, onDestroy } from 'svelte';
+  let { darkMode, toggleDarkMode } = $props();
+  
+  let isMenuOpen = $state(false);
+  let isServicesDropdownOpen = $state(false);
+  let scrolled = $state(false);
+  
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
     if (isMenuOpen) {
       isServicesDropdownOpen = false;
     }
   }
-
+  
   function toggleServicesDropdown() {
     isServicesDropdownOpen = !isServicesDropdownOpen;
   }
-
+  
   function handleScroll() {
     scrolled = window.scrollY > 20;
   }
-
-  if (typeof window !== 'undefined') {
-    window.addEventListener('scroll', handleScroll);
-  }
+  
+  onMount(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
+    }
+  });
+  
+  onDestroy(() => {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  });
 </script>
 
 <header class={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
@@ -40,7 +48,7 @@
       <div class="hidden md:flex items-center space-x-8">
         <div class="relative">
           <button 
-            on:click={toggleServicesDropdown}
+            onclick={toggleServicesDropdown}
             class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors flex items-center"
             aria-expanded={isServicesDropdownOpen}
           >
@@ -58,7 +66,7 @@
                     href={item.href} 
                     class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                     role="menuitem"
-                    on:click={() => isServicesDropdownOpen = false}
+                    onclick={() => isServicesDropdownOpen = false}
                   >
                     {item.name}
                   </a>
@@ -77,7 +85,7 @@
         </a>
         
         <button 
-          on:click={toggleDarkMode} 
+          onclick={toggleDarkMode} 
           class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
           aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
         >
@@ -95,7 +103,7 @@
       
       <div class="md:hidden flex items-center">
         <button 
-          on:click={toggleMenu} 
+          onclick={toggleMenu} 
           class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
@@ -119,7 +127,7 @@
       <nav class="flex flex-col space-y-4 px-4 py-6">
         <div>
           <button 
-            on:click={toggleServicesDropdown}
+            onclick={toggleServicesDropdown}
             class="w-full text-left flex justify-between items-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
             aria-expanded={isServicesDropdownOpen}
           >
@@ -135,7 +143,7 @@
                 <a 
                   href={item.href} 
                   class="block py-1 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
-                  on:click={toggleMenu}
+                  onclick={toggleMenu}
                 >
                   {item.name}
                 </a>
@@ -147,7 +155,7 @@
         <a 
           href="#about" 
           class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
-          on:click={toggleMenu}
+          onclick={toggleMenu}
         >
           {content.about}
         </a>
@@ -155,14 +163,14 @@
         <a 
           href="#contact" 
           class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
-          on:click={toggleMenu}
+          onclick={toggleMenu}
         >
           {content.contact}
         </a>
         
         <div class="flex space-x-4 pt-2">
           <button 
-            on:click={toggleDarkMode} 
+            onclick={toggleDarkMode} 
             class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
           >
             {#if darkMode}

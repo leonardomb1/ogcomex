@@ -1,24 +1,30 @@
 <script>
     import { createEventDispatcher } from 'svelte';
-
-    export let videoPath = './videos/video1.mp4';
-    export let autoplay = true;
-    export let loop = false;
-    export let muted = true;
+    let { videoPath, autoplay, loop, muted } = $props();
 
     const dispatch = createEventDispatcher();
+    
+    let videoElement;
 
     function handleEnded() {
         dispatch('ended');
     }
+    
+    $effect(() => {
+        if (videoElement && videoPath) {
+            videoElement.load();
+            if (autoplay) videoElement.play();
+        }
+    });
 </script>
 
-<video 
-    class="absolute inset-0 w-full h-full object-cover" 
-    {autoplay} 
-    {loop} 
+<video
+    bind:this={videoElement}
+    class="absolute inset-0 w-full h-full object-cover"
+    {autoplay}
+    {loop}
     {muted}
-    on:ended={handleEnded}
+    onended={handleEnded}
     playsinline
 >
     <source src={videoPath} type="video/mp4" />
