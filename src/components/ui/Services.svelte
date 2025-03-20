@@ -12,7 +12,7 @@
     <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {#each content.services as service, i}
         <div
-          class="bg-white dark:bg-gray-900 rounded-lg shadow-md p-8 transition-transform duration-300 hover:transform hover:scale-105"
+          class="cursor-pointer bg-white dark:bg-gray-900 rounded-lg shadow-md p-8 transition-transform duration-300 hover:transform hover:scale-105"
         >
           <div class="text-gray-700 dark:text-gray-300 mb-5">
             {@html service.icon}

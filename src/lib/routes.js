@@ -1,18 +1,17 @@
 export const routes = {
     services: [
-      { name: "Consultoria de Importação e Exportação", href: "#features" },
-      { name: "Despacho Aduaneiro", href: "#features" },
-      { name: "Conformidade Comercial", href: "#features" },
-      { name: "Estratégia de Entrada no Mercado", href: "#features" },
-      { name: "Otimização da Cadeia de Suprimentos", href: "#features" }
+      { name: "Consultoria de Importação e Exportação", href: "#services" },
+      { name: "Despacho Aduaneiro", href: "#services" },
+      { name: "Conformidade Comercial", href: "#services" },
+      { name: "Estratégia de Entrada no Mercado", href: "#services" },
+      { name: "Otimização da Cadeia de Suprimentos", href: "#services" }
     ],
     company: [
-      { name: "Sobre Nós", href: "#" },
+      { name: "Sobre Nós", href: "#about" },
       { name: "Contato", href: "#contact" }
     ],
     resources: [
-      { name: "Blog", href: "#" },
       { name: "Estudos de Caso", href: "#case-studies" },
-      { name: "Política de Privacidade", href: "#" },
+      { name: "Política de Privacidade", href: "#banner" },
     ]
 };

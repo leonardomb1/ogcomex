@@ -11,7 +11,7 @@
   })
 </script>
 
-<section id="hero" class="relative min-h-screen flex items-center pt-20">
+<section id="hero" class="relative flex items-center pt-30 pb-30">
   <div
     class="absolute inset-0 bg-gradient-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-800 z-0"
   ></div>
@@ -55,12 +55,12 @@
             class="absolute -inset-1 bg-gradient-to-r from-gray-600 to-gray-900 rounded-full blur opacity-30 dark:opacity-50"
           ></div>
           <div
-            class="relative bg-white dark:bg-gray-800 rounded-full p-6 shadow-xl"
+            class="relative bg-white dark:bg-gray-800 rounded-full p-15 shadow-md"
           >
             <img
               src="./images/logo.png"
               alt="OGComex Logo"
-              class="w-64 h-64 object-contain"
+              class="w-64 h-64 object-contain object-center"
             />
           </div>
         </div>

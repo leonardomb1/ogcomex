@@ -26,64 +26,66 @@
   })
 </script>
 
-<div class="relative h-screen overflow-hidden">
-  <div
-    class="absolute inset-0 transition-opacity duration-1000"
-    class:opacity-0={fadeOut}
-    class:opacity-100={!fadeOut && !fadeIn}
-  >
-    <div class="relative w-full h-full">
-      <Video
-        videoPath={videos[currentVideoIndex]}
-        autoplay={true}
-        loop={false}
-        muted={true}
-        on:ended={handleVideoEnd}
-      />
-    </div>
-
-    <div class="absolute inset-0 bg-black opacity-30"></div>
-  </div>
-  <div
-    class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
-  >
-    <h1
-      class="text-white text-4xl sm:text-6xl md:text-8xl font-bold text-center mb-4 tracking-tight"
+<section id="banner">
+  <div class="relative h-screen overflow-hidden">
+    <div
+      class="absolute inset-0 transition-opacity duration-1000"
+      class:opacity-0={fadeOut}
+      class:opacity-100={!fadeOut && !fadeIn}
     >
-      OG COMEX
-    </h1>
+      <div class="relative w-full h-full">
+        <Video
+          videoPath={videos[currentVideoIndex]}
+          autoplay={true}
+          loop={false}
+          muted={true}
+          on:ended={handleVideoEnd}
+        />
+      </div>
 
-    <p
-      class="text-white text-lg sm:text-xl md:text-2xl text-center max-w-3xl font-light tracking-wide"
+      <div class="absolute inset-0 bg-black opacity-30"></div>
+    </div>
+    <div
+      class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
     >
-      Expandindo horizontes, maximizando oportunidades
-    </p>
+      <h1
+        class="text-white text-4xl sm:text-6xl md:text-8xl font-bold text-center mb-4 tracking-tight"
+      >
+        OG COMEX
+      </h1>
 
-    <div class="absolute bottom-10 animate-bounce">
-      <a href="#features" aria-label="Scroll to features" class="text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
-      </a>
+      <p
+        class="text-white text-lg sm:text-xl md:text-2xl text-center max-w-3xl font-light tracking-wide"
+      >
+        Expandindo horizontes, maximizando oportunidades
+      </p>
+
+      <div class="absolute bottom-10 animate-bounce">
+        <a href="#services" aria-label="Scroll to features" class="text-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
-<style>
-  div.h-screen {
-    height: 100vh;
-    width: 100vw;
-    max-width: 100%;
-  }
-</style>
+  <style>
+    div.h-screen {
+      height: 100vh;
+      width: 100vw;
+      max-width: 100%;
+    }
+  </style>
+</section>

@@ -42,8 +42,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
       <div class="flex items-center">
-        <a href="#home" class="flex items-center">
-          <img src="./images/logo.png" alt="OGComex Logo" class="h-10 w-auto" />
+        <a href="#banner" class="flex items-center">
+          <img src="./images/logo.png" alt="OGComex Logo" class="h-16 w-auto" />
         </a>
       </div>
 
