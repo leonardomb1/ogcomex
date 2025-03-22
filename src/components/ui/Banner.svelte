@@ -48,10 +48,11 @@
     <div
       class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
     >
+    <div class="bg-black opacity-80 p-4 rounded-lg">
       <h1
         class="text-white text-4xl sm:text-6xl md:text-8xl font-bold text-center mb-4 tracking-tight"
       >
-        OG COMEX
+        OGCOMEX
       </h1>
 
       <p
@@ -59,6 +60,7 @@
       >
         Expandindo horizontes, maximizando oportunidades
       </p>
+    </div>
 
       <div class="absolute bottom-10 animate-bounce">
         <a href="#services" aria-label="Scroll to features" class="text-white">
