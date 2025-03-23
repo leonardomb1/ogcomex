@@ -1,18 +1,18 @@
 <script>
-  import { content } from '$lib/ui/contact'
-  import { socials } from '$lib/socials'
+  import { content } from "$lib/ui/contact"
+  import { socials } from "$lib/socials"
 
   let formData = {
-    name: '',
-    email: '',
-    company: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    message: "",
   }
 
   let formStatus = {
     submitted: false,
     success: false,
-    message: ''
+    message: "",
   }
 
   function handleSubmit() {
@@ -21,12 +21,12 @@
     setTimeout(() => {
       formStatus.success = true
       formStatus.message =
-        'Obrigado pela sua mensagem! Entraremos em contato em breve.'
+        "Obrigado pela sua mensagem! Entraremos em contato em breve."
       formData = {
-        name: '',
-        email: '',
-        company: '',
-        message: ''
+        name: "",
+        email: "",
+        company: "",
+        message: "",
       }
     }, 1500)
   }
@@ -131,38 +131,6 @@
         </h3>
 
         <div class="space-y-6">
-          <div class="flex items-start">
-            <svg
-              class="h-6 w-6 text-gray-700 dark:text-gray-300 mr-3 flex-shrink-0"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            <div>
-              <h4 class="text-lg font-semibold text-gray-900 dark:text-white">
-                {content.info.address.title}
-              </h4>
-              <p
-                class="text-gray-600 dark:text-gray-400 mt-1 whitespace-pre-line"
-              >
-                {content.info.address.value}
-              </p>
-            </div>
-          </div>
-
           <div class="flex items-start">
             <svg
               class="h-6 w-6 text-gray-700 dark:text-gray-300 mr-3 flex-shrink-0"

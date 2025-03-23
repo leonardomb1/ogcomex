@@ -1,7 +1,8 @@
 <script>
-  import { content } from '$lib/ui/header'
-  import { onMount, onDestroy } from 'svelte'
-  let { darkMode, toggleDarkMode } = $props()
+  import { content } from "$lib/ui/header"
+  import { onMount, onDestroy } from "svelte"
+  import { darkMode } from "$lib/stores"
+  let { toggleDarkMode } = $props()
 
   let isMenuOpen = $state(false)
   let isServicesDropdownOpen = $state(false)
@@ -23,27 +24,39 @@
   }
 
   onMount(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll)
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll)
       handleScroll()
     }
   })
 
   onDestroy(() => {
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('scroll', handleScroll)
+    if (typeof window !== "undefined") {
+      window.removeEventListener("scroll", handleScroll)
     }
   })
 </script>
 
 <header
-  class={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}
+  class={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md" : "bg-transparent"}`}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
       <div class="flex items-center">
-        <a href="#banner" class="flex items-center">
-          <img src="./images/logo.png" alt="OGComex Logo" class="h-16 w-auto" />
+        <a href="/#banner" class="flex items-center">
+          {#if $darkMode}
+            <img
+              src="./images/logoWhite.png"
+              alt="OGComex Logo"
+              class="h-16 w-auto"
+            />
+          {:else}
+            <img
+              src="./images/logo.png"
+              alt="OGComex Logo"
+              class="h-16 w-auto"
+            />
+          {/if}
         </a>
       </div>
 
@@ -56,7 +69,7 @@
           >
             {content.services}
             <svg
-              class={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+              class={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? "rotate-180" : ""}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -107,9 +120,11 @@
         <button
           onclick={() => toggleDarkMode()}
           class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-          aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          aria-label={$darkMode
+            ? "Switch to light mode"
+            : "Switch to dark mode"}
         >
-          {#if darkMode}
+          {#if $darkMode}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -197,7 +212,7 @@
           >
             {content.services}
             <svg
-              class={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
+              class={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? "rotate-180" : ""}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -247,7 +262,7 @@
             onclick={toggleDarkMode}
             class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
           >
-            {#if darkMode}
+            {#if $darkMode}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"

@@ -12,17 +12,13 @@ export let content = {
     },
     info: {
       title: "Informações de Contato",
-      address: {
-        title: "Endereço",
-        value: "Av. Paulista, 1000\nSão Paulo, SP 01310-100\nBrasil"
-      },
       phone: {
         title: "Telefone",
         value: "+55 (11) 3456-7890"
       },
       email: {
         title: "Email",
-        value: "info@ogcomex.com"
+        value: "info@ogcomex.com.br"
       },
       hours: {
         title: "Horário de Funcionamento",

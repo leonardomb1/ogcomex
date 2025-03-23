@@ -1,6 +1,7 @@
 <script>
-  import { onMount } from 'svelte'
-  import { content } from '$lib/ui/hero'
+  import { onMount } from "svelte"
+  import { content } from "$lib/ui/hero"
+  import { darkMode } from "$lib/stores"
 
   let isVisible = false
 
@@ -57,11 +58,19 @@
           <div
             class="relative bg-white dark:bg-gray-800 rounded-full p-15 shadow-md"
           >
-            <img
-              src="./images/logo.png"
-              alt="OGComex Logo"
-              class="w-64 h-64 object-contain object-center"
-            />
+            {#if $darkMode}
+              <img
+                src="./images/logoWhite.png"
+                alt="OGComex Logo"
+                class="w-64 h-64 object-contain object-center"
+              />
+            {:else}
+              <img
+                src="./images/logo.png"
+                alt="OGComex Logo"
+                class="w-64 h-64 object-contain object-center"
+              />
+            {/if}
           </div>
         </div>
       </div>
