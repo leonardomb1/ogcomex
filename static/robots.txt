@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ogcomex.ngrok.dev/sitemap.xml
+Sitemap: https://www.ogcomex.com.br/sitemap.xml
