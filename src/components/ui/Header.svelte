@@ -1,7 +1,7 @@
 <script>
-  import { content } from "$lib/ui/header"
-  import { onMount, onDestroy } from "svelte"
-  import { darkMode } from "$lib/stores"
+  import { content } from '$lib/ui/header'
+  import { onMount, onDestroy } from 'svelte'
+  import { darkMode } from '$lib/stores'
   let { toggleDarkMode } = $props()
 
   let isMenuOpen = $state(false)
@@ -24,21 +24,21 @@
   }
 
   onMount(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", handleScroll)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll)
       handleScroll()
     }
   })
 
   onDestroy(() => {
-    if (typeof window !== "undefined") {
-      window.removeEventListener("scroll", handleScroll)
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('scroll', handleScroll)
     }
   })
 </script>
 
 <header
-  class={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md" : "bg-transparent"}`}
+  class={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
@@ -69,7 +69,7 @@
           >
             {content.services}
             <svg
-              class={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? "rotate-180" : ""}`}
+              class={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -104,14 +104,14 @@
         </div>
 
         <a
-          href="#about"
+          href="/about"
           class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
         >
           {content.about}
         </a>
 
         <a
-          href="#contact"
+          href="/#contact"
           class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
         >
           {content.contact}
@@ -121,8 +121,8 @@
           onclick={() => toggleDarkMode()}
           class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
           aria-label={$darkMode
-            ? "Switch to light mode"
-            : "Switch to dark mode"}
+            ? 'Switch to light mode'
+            : 'Switch to dark mode'}
         >
           {#if $darkMode}
             <svg
@@ -212,7 +212,7 @@
           >
             {content.services}
             <svg
-              class={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? "rotate-180" : ""}`}
+              class={`ml-1 h-4 w-4 transition-transform ${isServicesDropdownOpen ? 'rotate-180' : ''}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
