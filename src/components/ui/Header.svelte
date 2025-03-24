@@ -104,7 +104,7 @@
         </div>
 
         <a
-          href="/about"
+          href="/#about"
           class="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
         >
           {content.about}
