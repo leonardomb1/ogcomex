@@ -21,7 +21,7 @@ export const socials = [
     },
     {
         name: 'WhatsApp',
-        url: 'https://api.whatsapp.com/send?phone=+5519989997498',
+        url: 'https://wa.me/5519989997498',
         svg:  IconWhatsApp
     }
 ]
