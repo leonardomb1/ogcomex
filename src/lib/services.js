@@ -21,6 +21,7 @@ export let content = [
           "Integração de sistema com nossos clientes",
           "Tratamento administrativo",
           "Tratamento tributário",
+          "Contratação de seguro",
           "Classificação fiscal de mercadoria (Nomenclatura Comum do Mercosul – NCM)",
           "Incoterms 2020 (Termos e condições de compra e venda no comércio internacional)"
         ]
@@ -34,18 +35,6 @@ export let content = [
           "Liberação alfandegária",
           "Atuação intermodal nas operações aéreas, marítimas e rodoviárias nacionais e internacionais",
           "Gestão de transporte nacional e internacional"
-        ]
-      },
-      {
-        title: "Serviços Especializados",
-        services: [
-          "Câmbio",
-          "Contratação de seguro",
-          "Emissão de DANFE",
-          "Atuação junto a órgãos anuentes de controle de mercadoria internacional",
-          "Inclusão do CNPJ ao Ato COTEPE – Benefício fiscal de redução de base de cálculo de ICMS para importação de materiais aeronáuticos",
-          "Importação de veículos antigos – colecionador",
-          "Importação e exportação de animais vivos"
         ]
       }
     ]
@@ -180,13 +169,6 @@ export let content = [
         "services": [
           "Auxílio na obtenção de licenças necessárias para importação e exportação",
           "Suporte no atendimento às exigências de órgãos reguladores como ANVISA, MAPA e IBAMA"
-        ]
-      },
-      {
-        "title": "Procedimentos Aduaneiros Especiais",
-        "services": [
-          "Orientação sobre participação em programas como a Linha Azul da Receita Federal",
-          "Facilitação de processos de despacho aduaneiro para empresas com histórico de conformidade"
         ]
       },
       {

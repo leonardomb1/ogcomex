@@ -15,20 +15,35 @@
     message: "",
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     formStatus.submitted = true
 
-    setTimeout(() => {
-      formStatus.success = true
-      formStatus.message =
-        "Obrigado pela sua mensagem! Entraremos em contato em breve."
-      formData = {
-        name: "",
-        email: "",
-        company: "",
-        message: "",
+    try {
+      const response = await fetch("https://formspree.io/f/xzzekdaq", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        formStatus.success = true
+        formStatus.message =
+          "Obrigado pela sua mensagem! Entraremos em contato em breve."
+        formData = {
+          name: "",
+          email: "",
+          company: "",
+          message: "",
+        }
+      } else {
+        throw new Error("Failed to send message")
       }
-    }, 1500)
+    } catch (error) {
+      formStatus.success = false
+      formStatus.message = "Ocorreu um erro ao enviar sua mensagem."
+    }
   }
 </script>
 

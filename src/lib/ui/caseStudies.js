@@ -1,20 +1,20 @@
 export let caseStudies = [
   {
-    title: "Estratégia de Entrada no Mercado para Empresa de Tecnologia",
-    description: "Ajudou uma empresa de tecnologia dos EUA a entrar com sucesso no mercado brasileiro, desenvolvendo uma estratégia abrangente de entrada no mercado, navegando pelos requisitos regulatórios e estabelecendo parcerias locais.",
-    results: ["Entrada no mercado 50% mais rápida", "Redução de custos em 30%", "Conformidade regulatória bem-sucedida"],
+    title: "A melhor Estratégia de Entrada em Mercados Estrangeiros",
+    description: "Ajudamos empresas a ingressarem em mercados estrangeiros com segurança e eficiência. Nossa consultoria em comércio exterior oferece apoio completo na definição de estratégias de entrada, atendimento a exigências regulatórias e estruturação de parcerias locais que aceleram a internacionalização.",
+    results: ["Tenha uma entrada no mercado até 50% mais rápida", "Reduza custos em até 30%", "Garanta conformidade regulatória com sucesso"],
     image: "/images/cruiseShip.jpg"
   },
   {
-    title: "Otimização da Cadeia de Suprimentos para Fabricante",
-    description: "Otimização da cadeia de suprimentos para um fabricante europeu operando no Brasil, melhorando a eficiência, reduzindo custos e aprimorando o desempenho geral.",
-    results: ["Redução de 35% nos custos logísticos", "Desembaraço aduaneiro 40% mais rápido", "Melhoria nas relações com fornecedores"],
+    title: "Possibilidade de Otimizar sua Cadeia de Suprimentos",
+    description: "Oferecemos soluções estratégicas para empresas que desejam tornar suas operações de importação mais ágeis, econômicas e eficazes. Nossa consultoria identifica gargalos logísticos, renegocia contratos e implementa melhorias na cadeia de suprimentos com foco em resultados concretos.",
+    results: ["Reduza custos logísticos em até 35%", "Acelere o desembaraço aduaneiro em até 40%", "Melhore as relações com fornecedores"],
     image: "/images/plane.jpg"
   },
   {
-    title: "Conformidade Aduaneira para Rede de Varejo",
-    description: "Auxiliou uma rede de varejo global a garantir a conformidade aduaneira para suas operações no Brasil, evitando penalidades e agilizando os processos de importação.",
-    results: ["Zero violações de conformidade", "Processamento de importação 25% mais rápido", "Economia de custos significativa"],
+    title: "Ter Conformidade Aduaneira para sua Empresa",
+    description: "Garantimos que sua empresa esteja 100% alinhada com a legislação aduaneira brasileira. Com nossa assessoria especializada, você evita penalidades, reduz atrasos nos processos de importação e assegura total conformidade com os órgãos reguladores.",
+    results: ["Evite violações de conformidade", "Agilize o processamento de importação em até 25%", "Economize custos de forma significativa"],
     image: "/images/warehouse.jpg"
   }
 ];

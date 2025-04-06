@@ -22,7 +22,7 @@ export let content = {
       },
       hours: {
         title: "Horário de Funcionamento",
-        value: "Segunda - Sexta: 9:00 - 18:00\nSábado - Domingo: Fechado"
+        value: "Segunda - Sexta: 8:00 - 18:00\nSábado - Domingo: Fechado"
       },
       social: "Conecte-se Conosco"
     }

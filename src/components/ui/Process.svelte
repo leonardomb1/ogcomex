@@ -1,5 +1,5 @@
 <script>
-  import { content } from '$lib/ui/process'
+  import { content } from "$lib/ui/process"
 </script>
 
 <section id="how-we-work" class="py-20 bg-gray-50 dark:bg-gray-800">
@@ -17,9 +17,20 @@
       <div class="space-y-12">
         {#each content.steps as step, i}
           <div class="relative">
+            <div class="md:hidden flex items-center mt-4 mb-8">
+              <div
+                class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold mr-4"
+              >
+                {step.number}
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                {step.title}
+              </h3>
+            </div>
+
             <div class="md:flex items-center">
               <div
-                class={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 text-right' : 'md:pl-12 md:order-last'}`}
+                class={`md:w-1/2 ${i % 2 === 0 ? "md:pr-12 text-right" : "md:pl-12 md:order-last"}`}
               >
                 <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
                   <h3
@@ -42,17 +53,6 @@
               </div>
 
               <div class="md:w-1/2 md:invisible"></div>
-            </div>
-
-            <div class="md:hidden flex items-center mt-4 mb-8">
-              <div
-                class="flex items-center justify-center w-12 h-12 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold mr-4"
-              >
-                {step.number}
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                {step.title}
-              </h3>
             </div>
           </div>
         {/each}

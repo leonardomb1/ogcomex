@@ -1,25 +1,27 @@
 <script>
-  import { caseStudies } from '$lib/ui/caseStudies'
+  import { caseStudies } from "$lib/ui/caseStudies"
 </script>
 
 <section id="case-studies" class="py-20">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="section-title">
-      <h2 class="text-gray-900 dark:text-white">Estudos de caso</h2>
-      <p class="mt-4 text-xl">Histórias de sucesso reais de nossos clientes</p>
+      <h2 class="text-gray-900 dark:text-white">Nossas Vantagens</h2>
+      <p class="mt-4 text-xl">
+        Descubra quais vantagens sua empresa terá ao contratar nossos serviços
+      </p>
     </div>
 
     <div class="mt-16 space-y-16">
       {#each caseStudies as caseStudy, i}
         <div
-          class={`flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
+          class={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-8 items-center`}
         >
           <div class="lg:w-1/2">
             <div
               class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
             >
               <img
-                src={caseStudy.image || '/placeholder.svg'}
+                src={caseStudy.image || "/placeholder.svg"}
                 alt={caseStudy.title}
                 class="w-full h-auto object-cover"
               />
